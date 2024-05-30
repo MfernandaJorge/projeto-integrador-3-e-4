@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login NJRN</title>
+
+    <link rel="stylesheet" href="/style/cadastro.css">
+    <script type="text/javascript" src="/functions/cadastro.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="login-form">
+        <h3 class="title">Realize seu cadastro aqui!</h3>
+
+        <!-- FORM DE LOGIN -->
+        <div class="form-group">
+          <input type="text" placeholder="Nome: " id="nome" required>
+          <input type="text" placeholder="CPF: " id="cpf" required>
+          <input type="date" title="Data de Nascimento: " id="data" required>
+          <input type="number" onclick="formatarNumero()" placeholder="Telefone: " id="tel" required>
+          <input type="text" placeholder="CPF do Responsável: " id="cpf_r" required>
+          <input type="number" placeholder="Telefone do Responsável: " id="tel_r" required>
+
+          <input class="button" type="submit" onclick="submit(); return false;" placeholder="Enviar">
+        </div>
+
+        <!-- ENCAMINHA PARA FORM DE CADASTRO OU ALTERAR SENHA -->
+        <div class="form-group">
+        </div>
+      </form>
+    </div>
+
+    <!-- RODAPÉ PADRÃO -->
+    <footer class="footer">
+      <img src="/images/logo-footer.png">
+      <p>NRJN - Todos os direitos reservados</p>
+      <a href="#">Políticas de privacidade</a>
+    </footer>
+  </body>
+</html>

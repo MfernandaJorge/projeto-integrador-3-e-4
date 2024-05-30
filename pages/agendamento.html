@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login NJRN</title>
+
+    <link rel="stylesheet" href="/style/agendamento.css">
+    <script type="text/javascript" src="/functions/agendamento.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="login-form">
+        <h3 class="title">Realize seus agendamentos aqui!</h3>
+
+        <!-- FORM DE LOGIN -->
+        <div class="form-group">
+          <input type="date" placeholder="Data do agendamento" id="data" required>
+          <input type="text" placeholder="Especialidade" id="especialidade" required>
+          <input type="text" placeholder="Profissional" id="profissional" required>
+          <input type="text" placeholder="CID" id="cid" required>
+          <input type="file" placeholder="Documento" id="documento" required>
+
+          <input class="button" type="submit" onclick="submit(); return false" placeholder="Enviar">
+        </div>
+
+        <!-- ENCAMINHA PARA FORM DE CADASTRO OU ALTERAR SENHA -->
+        <div class="form-group">
+        </div>
+      </form>
+    </div>
+
+    <!-- RODAPÉ PADRÃO -->
+    <footer class="footer">
+      <img src="/images/logo-footer.png">
+      <p>NRJN - Todos os direitos reservados</p>
+      <a href="#">Políticas de privacidade</a>
+    </footer>
+  </body>
+</html>
