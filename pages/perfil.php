@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <form id="login-form">
-        <h3 class="title">Edite seu perfil aqui!</h3>
+        <h3 class="title">Cadastre-se aqui!</h3>
 
         <!-- FORM DE LOGIN -->
         <div class="form-group">
@@ -23,8 +23,6 @@
           <input type="email"    placeholder="Email: "                   id="email" required>
           <input type="password" placeholder="Insira uma senha: "        id="senha" required>
           <input type="number"   placeholder="Telefone: "                id="tel" required>
-          <input type="text"     placeholder="CPF do Responsável: "      id="cpf_r" required>
-          <input type="number"   placeholder="Telefone do Responsável: " id="tel_r" required>
 
           <select id="tipo_user">
             <option  value="" disabled selected> Tipo de usuário </option>
@@ -32,13 +30,17 @@
             <option value="1">Paciente</option>
           </select>
 
-          <input type="number" placeholder="CRM: " id="crm" disabled>
+          <input type="text"     placeholder="CPF do Responsável: "      id="cpf_r" required disabled>
+          <input type="number"   placeholder="Telefone do Responsável: " id="tel_r" required disabled>
+          <input type="number"   placeholder="CRM: " id="crm" disabled>
 
           <input class="button" type="submit" onclick="onSubmit(); return false;" placeholder="Editar">
           <script>
             document.addEventListener('DOMContentLoaded', function() {
               const tipo_user = document.getElementById('tipo_user');
               const crm = document.getElementById('crm');
+              const cpf_r = document.getElementById('cpf_r');
+              const tel_r = document.getElementById('tel_r');
 
               // Adicionar um ouvinte de evento para monitorar mudanças no campo1
               tipo_user.addEventListener('input', function() {
@@ -46,9 +48,13 @@
                 // Verificar se campo1 está preenchido
                 if (tipo_user.value == 0) {
                   crm.disabled = false; // Habilitar crm
+                  cpf_r.disabled = true; // Habilitar cpf_r
+                  tel_r.disabled = true; // Habilitar tel_r
 
                 } else {
-                  crm.disabled = true; // Desabilitar crm se campo1 estiver vazio
+                  crm.disabled = true; // Desabilitar crm
+                  cpf_r.disabled = false; // Habilitar cpf_r
+                  tel_r.disabled = false; // Habilitar tel_r
                 }
               });
             });

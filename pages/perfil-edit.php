@@ -6,8 +6,7 @@
 
     <title>Login NJRN</title>
 
-    <link rel="stylesheet" href="../style/perfil.css">
-    <script type="text/javascript" src="../js/perfil.js"></script>
+    <link rel="stylesheet" href="../style/perfil-edit.css">
   </head>
 
   <body>

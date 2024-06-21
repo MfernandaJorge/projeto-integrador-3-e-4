@@ -15,21 +15,23 @@
 
     // Verificar se $_SESSION['user'] é igual a 0
     if ($_SESSION['tipo_user'] == 0) {
-        $buttonVisibility = 'visible'; // Variável para controlar a visibilidade do botão
+        $buttonAgenda = 'visible'; // Variável para controlar a visibilidade do botão
+        $buttonAgendamento = 'hidden'; // Variável para controlar a visibilidade do botão
     } else {
-        $buttonVisibility = 'hidden';
+        $buttonAgenda = 'hidden';
+        $buttonAgendamento = 'visible';
     }
   ?>
   <body>
     <div class="container">
       <h3 class="title">MENU:</h3>
-        <button class="button-agendamento" type="submit" onclick="menu('agendamento'); return false">
+        <button class="button-agendamento" type="submit" onclick="menu('agendamento'); return false" style="visibility: <?php echo $buttonAgendamento; ?>">
           Solicitar Agendamento
         </button>
         <button class="button-perfil" type="submit" onclick="menu('perfil'); return false">
           Informações Cadastrais
         </button>
-        <button class="button-agenda" type="submit" onclick="menu('agenda'); return false" style="visibility: <?php echo $buttonVisibility; ?>">
+        <button class="button-agenda" type="submit" onclick="menu('agenda'); return false" style="visibility: <?php echo $buttonAgenda; ?>">
           Agenda
         </button>
     </div>

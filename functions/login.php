@@ -12,11 +12,11 @@ function validateLogin($username, $password) {
   $rs = mysqli_query($conexao, $sql) or die("error retrieving data. " . mysqli_error($conexao));
   $data = mysqli_fetch_assoc($rs);
 
-  session_start();
-  $_SESSION['id_usuario'] = $data['id_usuario'];
-  $_SESSION['tipo_user'] = $data['tipo_user'];
-
   if ($data) {
+    session_start();
+    $_SESSION['id_usuario'] = $data['id_usuario'];
+    $_SESSION['tipo_user'] = $data['tipo_user'];
+
     return [
       'success' => true,
       'message' => 'Login bem-sucedido'

@@ -53,8 +53,11 @@ function onSubmit() {
     $profissional = mysqli_real_escape_string($conexao, $_POST['profissional']);
     $cid = mysqli_real_escape_string($conexao, $_POST['cid']);
 
-    $sql = "INSERT INTO `agenda` (`data`,`id_especialidade`,`id_profissional`,`cid`)
-              VALUES ('$data', '$especialidade', '$profissional', '$cid');";
+    session_start();
+    $id_usuario = $_SESSION['id_usuario'];
+
+    $sql = "INSERT INTO `agenda` (`data`, `id_especialidade`, `id_profissional`, `cid`, `id_usuario`)
+              VALUES ('$data', '$especialidade', '$profissional', '$cid', '$id_usuario');";
 
     $rs = mysqli_query($conexao, $sql) or die("Erro ao inserir usuário: " . mysqli_error($conexao));
 
